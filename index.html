@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Loteria</title>
+</head>
+
+<body>
+    <header>
+        <h2 id="titulo">Resultado lotofácil</h2>
+    </header>
+    <section>
+
+        <div class="container">
+            <div class="box row">
+                <div class="col-md-2">
+                    <label for="txt_1" class="form-label">1° núm.</label>
+                    <input type="number" class="form-control" id="txt_1">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_2" class="form-label">2° núm.</label>
+                    <input type="number" class="form-control" id="txt_2">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_3" class="form-label">3° núm.</label>
+                    <input type="number" class="form-control" id="txt_3">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_4" class="form-label">4° núm.</label>
+                    <input type="number" class="form-control" id="txt_4">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_5" class="form-label">5° núm.</label>
+                    <input type="number" class="form-control" id="txt_5">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_6" class="form-label">6° núm.</label>
+                    <input type="number" class="form-control" id="txt_6">
+                </div>
+
+                <div class="col-md-2">
+                    <label for="txt_7" class="form-label">7° núm.</label>
+                    <input type="number" class="form-control" id="txt_7">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_8" class="form-label">8° núm.</label>
+                    <input type="number" class="form-control" id="txt_8">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_9" class="form-label">9° núm.</label>
+                    <input type="number" class="form-control" id="txt_9">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_10" class="form-label">10° núm.</label>
+                    <input type="number" class="form-control" id="txt_10">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_11" class="form-label">11° núm.</label>
+                    <input type="number" class="form-control" id="txt_11">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_12" class="form-label">12° núm.</label>
+                    <input type="number" class="form-control" id="txt_12">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_13" class="form-label">13° núm.</label>
+                    <input type="number" class="form-control" id="txt_13">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_14" class="form-label">14° núm.</label>
+                    <input type="number" class="form-control" id="txt_14">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_15" class="form-label">15° núm.</label>
+                    <input type="number" class="form-control" id="txt_15">
+                </div>
+                <div class="col-md-3" id="btn">
+                    <button type="button" class="btn btn-success" onclick="conferir()">Conferir</button>
+                </div>
+                <div class="col-md-3" id="btn">
+                    <button type="button" class="btn btn-danger" onclick="limpar()">Limpar</button>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="resultado" class="col-md-6">
+
+            </div>
+        </div>
+
+
+    </section>
+    <footer>
+        <p>Melqui Santos &copy; todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
