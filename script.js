@@ -44,3 +44,18 @@ function limpar() {
     document.getElementById('resultado').style.display = 'none';
     document.getElementById('txt_1').focus();
 }
+
+function sorteio() {
+    debugger
+    var array1 = [1, 3, 5, 8, 10, 11, 13, 14, 15, 16, 17, 18, 21, 22, 25];
+    var boxSorteio = document.getElementById('sorteio');
+
+
+    for (let x = 0; x < array1.length; x++) {
+
+        var bola = document.createElement('span');
+        bola.innerHTML = array1[x];
+        boxSorteio.appendChild(bola)
+    }
+
+}

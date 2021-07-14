@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 body {
     font-family: Roboto;
 }
 
 #titulo {
+    font-family: Montserrat;
     margin-top: 25px;
-    font-size: 40px;
     font-weight: lighter;
     text-shadow: 1px 1px black;
 }
@@ -44,6 +45,18 @@ section {
     box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+#sorteio {
+    padding: 25px !important;
+    border-radius: 25px;
+    background-color: #F2F3F4;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: auto;
+}
+
 #btn {
     display: flex;
     align-items: flex-end;
@@ -60,11 +73,20 @@ section {
     height: 50px;
     margin: 15px auto;
     display: none;
-    display: flex;
     align-items: center;
     justify-content: center;
     font: 20pt bold;
     color: whitesmoke;
     font-family: Roboto;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+span {
+    border: solid 1px;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
