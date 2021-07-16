@@ -4,6 +4,17 @@ body {
     font-family: Roboto;
 }
 
+h4 {
+    text-align: center;
+}
+
+
+/* Ajustar números no título*/
+
+#concurso {
+    display: flex;
+}
+
 #titulo {
     font-family: Roboto;
     margin: 15px;
@@ -11,9 +22,9 @@ body {
     text-shadow: 1px 1px black;
 }
 
-.container {
-    text-align: center;
-    position: relative;
+#bg {
+    background-image: url(img/bg.jpg);
+    background-size: cover;
 }
 
 label {
@@ -24,12 +35,13 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px auto;
+    margin: auto;
     padding-bottom: 10px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
-    width: 50%;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+    color: aliceblue;
+    font-style: italic;
 }
 
 footer {
@@ -48,15 +60,13 @@ section {
 .box {
     padding: 25px !important;
     border-radius: 25px;
-    background-color: #F2F3F4;
+    background-color: rgba(0, 0, 0, 0.4);
     box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+    color: white;
 }
 
 #info {
     padding: 25px 5px 0 5px !important;
-    border-radius: 25px;
-    background-color: #F2F3F4;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
     margin: 25px auto;
     text-align: center !important;
 }
@@ -72,9 +82,19 @@ section {
 }
 
 .grid-item {
-    box-shadow: 2px 2px 1.5px 1.5px rgba(0, 0, 0, 0.3);
+    background: #DCE35B;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #45B649, #DCE35B);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #45B649, #DCE35B);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 2px 2px 1.5px 1.5px rgb(0, 0, 0);
+    opacity: 0.8;
     padding: 15px;
     text-align: center;
+    color: #ffff;
+    font-weight: bold;
+    text-shadow: 1px 1px;
     border-radius: 50%;
     font-size: 1.5rem;
     width: 75%;
@@ -103,4 +123,15 @@ section {
     color: whitesmoke;
     font-family: Roboto;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+table {
+    color: white !important;
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px 0 15px 0;
+}
+
+tr:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }

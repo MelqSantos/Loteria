@@ -1,3 +1,20 @@
+// Função para mostrar os números sorteados 
+$(document).ready(function() {
+    var concurso = $("#concurso");
+    var teste = [1, 2, 4, 5, 6, 10, 11, 12, 13, 14, 18, 20, 21, 23, 24];
+
+
+    for (var x = 0; x < teste.length; x++) {
+        var num = document.createElement("span");
+        concurso.append(num);
+        num.innerHTML = teste[x];
+
+
+    }
+
+});
+
+
 function conferir() {
 
     // Array do sorteio
