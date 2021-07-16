@@ -12,76 +12,77 @@
 
 <body onload="sorteio()">
     <header>
-        <h2 id="titulo">Resultado lotofácil</h2>
+        <div class="wrapper_titulo">
+            <img src="img/clover.png" alt="loteria">
+            <h2 id="titulo"> Resultado lotofácil</h2>
+        </div>
     </header>
     <section>
 
         <div class="container">
-            <div id="sorteio">
-            </div>
 
             <div class="box row">
                 <div class="col-md-2">
-                    <label for="txt_1" class="form-label">1° núm.</label>
+                    <label for="txt_0" class="form-label">1° núm.</label>
+                    <input type="number" class="form-control" id="txt_0">
+                </div>
+                <div class="col-md-2">
+                    <label for="txt_1" class="form-label">2° núm.</label>
                     <input type="number" class="form-control" id="txt_1">
                 </div>
                 <div class="col-md-2">
-                    <label for="txt_2" class="form-label">2° núm.</label>
+                    <label for="txt_2" class="form-label">3° núm.</label>
                     <input type="number" class="form-control" id="txt_2">
                 </div>
                 <div class="col-md-2">
-                    <label for="txt_3" class="form-label">3° núm.</label>
+                    <label for="txt_3" class="form-label">4° núm.</label>
                     <input type="number" class="form-control" id="txt_3">
                 </div>
                 <div class="col-md-2">
-                    <label for="txt_4" class="form-label">4° núm.</label>
+                    <label for="txt_4" class="form-label">5° núm.</label>
                     <input type="number" class="form-control" id="txt_4">
                 </div>
                 <div class="col-md-2">
-                    <label for="txt_5" class="form-label">5° núm.</label>
+                    <label for="txt_5" class="form-label">6° núm.</label>
                     <input type="number" class="form-control" id="txt_5">
                 </div>
                 <div class="col-md-2">
-                    <label for="txt_6" class="form-label">6° núm.</label>
+                    <label for="txt_6" class="form-label">7° núm.</label>
                     <input type="number" class="form-control" id="txt_6">
                 </div>
-
                 <div class="col-md-2">
-                    <label for="txt_7" class="form-label">7° núm.</label>
+                    <label for="txt_7" class="form-label">8° núm.</label>
                     <input type="number" class="form-control" id="txt_7">
                 </div>
                 <div class="col-md-2">
-                    <label for="txt_8" class="form-label">8° núm.</label>
+                    <label for="txt_8" class="form-label">9° núm.</label>
                     <input type="number" class="form-control" id="txt_8">
                 </div>
                 <div class="col-md-2">
-                    <label for="txt_9" class="form-label">9° núm.</label>
+                    <label for="txt_9" class="form-label">10° núm.</label>
                     <input type="number" class="form-control" id="txt_9">
                 </div>
                 <div class="col-md-2">
-                    <label for="txt_10" class="form-label">10° núm.</label>
+                    <label for="txt_10" class="form-label">11° núm.</label>
                     <input type="number" class="form-control" id="txt_10">
                 </div>
                 <div class="col-md-2">
-                    <label for="txt_11" class="form-label">11° núm.</label>
+                    <label for="txt_11" class="form-label">12° núm.</label>
                     <input type="number" class="form-control" id="txt_11">
                 </div>
                 <div class="col-md-2">
-                    <label for="txt_12" class="form-label">12° núm.</label>
+                    <label for="txt_12" class="form-label">13° núm.</label>
                     <input type="number" class="form-control" id="txt_12">
                 </div>
                 <div class="col-md-2">
-                    <label for="txt_13" class="form-label">13° núm.</label>
+                    <label for="txt_13" class="form-label">14° núm.</label>
                     <input type="number" class="form-control" id="txt_13">
                 </div>
                 <div class="col-md-2">
-                    <label for="txt_14" class="form-label">14° núm.</label>
+                    <label for="txt_14" class="form-label">15° núm.</label>
                     <input type="number" class="form-control" id="txt_14">
                 </div>
-                <div class="col-md-2">
-                    <label for="txt_15" class="form-label">15° núm.</label>
-                    <input type="number" class="form-control" id="txt_15">
-                </div>
+
                 <div class="col-md-3" id="btn">
                     <button type="button" class="btn btn-success" onclick="conferir()">Conferir</button>
                 </div>
@@ -91,19 +92,60 @@
 
 
             </div>
-        </div>
 
-        <div class="row">
-            <div id="resultado" class="col-md-6">
+            <div class="row">
 
+                <div class="col-md-6 grid-container">
+                </div>
+
+
+                <div class="col-md-6" id="info">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Acertos</th>
+                                <th scope="col"></th>
+                                <th scope="col">Prêmio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="tb_15">
+                                <th scope="row">15</th>
+                                <td>X</td>
+                                <td>R$1.500.000</td>
+                            </tr>
+                            <tr id="tb_14">
+                                <th scope="row">14</th>
+                                <td>X</td>
+                                <td>R$1.000</td>
+                            </tr>
+                            <tr id="tb_13">
+                                <th scope="row">13</th>
+                                <td>X</td>
+                                <td>R$20.00</td>
+                            </tr>
+                            <tr id="tb_12">
+                                <th scope="row">12</th>
+                                <td>X</td>
+                                <td>R$8.00</td>
+                            </tr>
+                            <tr id="tb_11">
+                                <th scope="row">11</th>
+                                <td>X</td>
+                                <td>R$4.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
 
+
     </section>
-    <footer>
+    <!-- <footer>
         <p>Melqui Santos &copy; todos os direitos reservados.</p>
-    </footer>
+    </footer> !-->
     <script src="script.js"></script>
 
 </body>

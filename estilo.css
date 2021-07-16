@@ -5,9 +5,9 @@ body {
 }
 
 #titulo {
-    font-family: Montserrat;
-    margin-top: 25px;
-    font-weight: lighter;
+    font-family: Roboto;
+    margin: 15px;
+    font-weight: 800;
     text-shadow: 1px 1px black;
 }
 
@@ -20,9 +20,16 @@ label {
     padding-top: 10px !important;
 }
 
-header {
+.wrapper_titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 5px auto;
+    padding-bottom: 10px;
+    border-radius: 15px;
     text-align: center;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+    width: 50%;
 }
 
 footer {
@@ -45,16 +52,33 @@ section {
     box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-#sorteio {
-    padding: 25px !important;
+#info {
+    padding: 25px 5px 0 5px !important;
     border-radius: 25px;
     background-color: #F2F3F4;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
-    margin: 20px auto;
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    height: auto;
+    margin: 25px auto;
+    text-align: center !important;
+}
+
+.grid-container {
+    border-radius: 25px;
+    margin: 25px auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+}
+
+.grid-item {
+    box-shadow: 2px 2px 1.5px 1.5px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    width: 75%;
+    height: 75%;
 }
 
 #btn {
@@ -79,14 +103,4 @@ section {
     color: whitesmoke;
     font-family: Roboto;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
-}
-
-span {
-    border: solid 1px;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
