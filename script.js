@@ -1,35 +1,31 @@
 // Função para mostrar os números sorteados 
 $(document).ready(function() {
     var concurso = $("#concurso");
-    var teste = [1, 2, 4, 5, 6, 10, 11, 12, 13, 14, 18, 20, 21, 23, 24];
+    sorteio_principal = [1, 2, 4, 5, 6, 10, 11, 12, 13, 14, 18, 20, 21, 23, 24];
 
 
-    for (var x = 0; x < teste.length; x++) {
+    for (var x = 0; x < sorteio_principal.length; x++) {
         var num = document.createElement("span");
         concurso.append(num);
-        num.innerHTML = teste[x];
-
-
+        num.innerHTML = sorteio_principal[x];
     }
 
 });
 
-
+// Função para conferir os números digitados com o array do sorteio
 function conferir() {
 
-    // Array do sorteio
-    var array1 = [1, 2, 4, 5, 6, 10, 11, 12, 13, 14, 18, 20, 21, 23, 24];
     var array2 = [];
     var acertos = 0;
 
     // Preenche o array 2 de acordo com os campos no form
-    for (x = 0; x < array1.length; x++) {
+    for (x = 0; x < sorteio_principal.length; x++) {
         var resultado = Number(document.getElementById('txt_' + x).value);
         array2.push(resultado);
         var push = document.getElementById("grid-item_" + x);
         push.innerHTML = array2[x];
 
-        if (array1.indexOf(resultado) != -1) {
+        if (sorteio_principal.indexOf(resultado) != -1) {
             acertos = acertos + 1;
         } else {
             push.classList.add("errou");
@@ -66,33 +62,32 @@ function conferir() {
 
 }
 
+// Limpa os campos input e as esferas ao lado da tabela
 function limpar() {
 
     document.getElementById("txt_0").focus();
 
     for (x = 0; x < 15; x++) {
         document.getElementById('txt_' + x).value = "";
+        var bola = document.getElementById("grid-item_" + x);
+        bola.classList.remove("errou");
+        bola.innerHTML = "X";
 
         if (x >= 11 && x <= 15) {
             document.getElementById('tb_' + x).style.backgroundColor = "initial";
 
 
-        } else {
-            document.getElementById("grid-item_" + x).classList.remove("errou");
         }
     }
-    array1 = [];
     array2 = [];
     document.getElementById('txt_0').focus();
 }
 
 function sorteio() {
 
-    var array1 = [1, 2, 4, 5, 6, 10, 11, 12, 13, 14, 18, 20, 21, 23, 24];
     var boxSorteio = document.querySelector("div .grid-container");
 
-
-    for (let x = 0; x < array1.length; x++) {
+    for (let x = 0; x < sorteio_principal.length; x++) {
 
         var bola = document.createElement('div');
         boxSorteio.appendChild(bola);
