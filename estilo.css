@@ -4,8 +4,14 @@ body {
     font-family: Roboto;
 }
 
+.banner {
+    padding-top: 15px;
+}
+
 h4 {
     text-align: center;
+    color: #ffff;
+    text-shadow: 1px 1px #0000;
 }
 
 
@@ -13,6 +19,7 @@ h4 {
 
 #concurso {
     display: flex;
+    justify-content: center;
 }
 
 #titulo {
@@ -39,7 +46,6 @@ label {
     padding-bottom: 10px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
     color: aliceblue;
     font-style: italic;
 }
@@ -79,6 +85,13 @@ section {
     padding: 10px;
     grid-column-gap: 0.5rem;
     grid-row-gap: 0.5rem;
+    animation-duration: 3s;
+    animation-name: grid;
+}
+
+.grid-item:hover {
+    transition: all 0.3s ease-in-out;
+    transform: rotate(360deg);
 }
 
 .grid-item {
@@ -99,6 +112,15 @@ section {
     font-size: 1.5rem;
     width: 75%;
     height: 75%;
+}
+
+.errou {
+    background: #ff9966;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff5e62, #ff9966);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 #btn {
@@ -132,6 +154,23 @@ table {
     border-radius: 15px 0 15px 0;
 }
 
-tr:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+span {
+    width: 25px;
+    height: 25px;
+    border: solid 1px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    font-weight: bold;
+    font-size: 10pt;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+}
+
+i:hover {
+    transition: all 1s ease-in-out;
+    transform: rotate(360deg);
+    cursor: pointer;
 }

@@ -31,6 +31,8 @@ function conferir() {
 
         if (array1.indexOf(resultado) != -1) {
             acertos = acertos + 1;
+        } else {
+            push.classList.add("errou");
         }
     }
     var box = document.getElementById('sorteio')
@@ -65,19 +67,23 @@ function conferir() {
 }
 
 function limpar() {
+
     document.getElementById("txt_0").focus();
 
-    for (x = 1; x <= 15; x++) {
+    for (x = 0; x < 15; x++) {
         document.getElementById('txt_' + x).value = "";
 
         if (x >= 11 && x <= 15) {
-            document.getElementById('tb_' + x).style.backgroundColor = "#F2F3F4";
+            document.getElementById('tb_' + x).style.backgroundColor = "initial";
+
+
+        } else {
+            document.getElementById("grid-item_" + x).classList.remove("errou");
         }
     }
     array1 = [];
     array2 = [];
-    document.getElementById('resultado').style.display = 'none';
-    document.getElementById('txt_1').focus();
+    document.getElementById('txt_0').focus();
 }
 
 function sorteio() {
