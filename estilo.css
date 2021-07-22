@@ -90,8 +90,8 @@ section {
 }
 
 .grid-item:hover {
-    transition: all 0.3s ease-in-out;
-    transform: rotate(360deg);
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1)
 }
 
 .grid-item {
@@ -107,7 +107,7 @@ section {
     text-align: center;
     color: #ffff;
     font-weight: bold;
-    text-shadow: 1px 1px;
+    text-shadow: 1px 1px #000000;
     border-radius: 50%;
     font-size: 1.5rem;
     width: 75%;
@@ -173,4 +173,8 @@ i:hover {
     transition: all 1s ease-in-out;
     transform: rotate(360deg);
     cursor: pointer;
+}
+
+.borda {
+    border: solid 2px red !important
 }
