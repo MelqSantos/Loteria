@@ -184,12 +184,19 @@ i:hover {
 
 /* Toast */
 
+.toast-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .toast {
-    position: absolute;
+    position: fixed;
     text-align: center;
     margin-left: 2vw;
     font-weight: bold;
     font-size: 1rem;
+    backdrop-filter: blur(100px);
 }
 
 .toast-header {
@@ -197,5 +204,9 @@ i:hover {
     color: #000000;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+}
+
+.toast-body {
+    padding: 0.9rem;
 }

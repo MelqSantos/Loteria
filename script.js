@@ -37,9 +37,11 @@ function conferir() {
     if (cVazios.length > 0 && cVazios.length <= 15) {
         toast();
         $('.toast-body').html('Preencha os campos vazios para prosseguir! ');
+        $('.toast-header').css('background-color', '#DCE35B');
     } else if (cRepetidos > 0) {
         toast();
         $('.toast-body').html('Números repetidos! ');
+        $('.toast-header').css('background-color', '#DCE35B');
     } else {
         // Preenche o array 2 de acordo com os campos no form
         for (x = 0; x < sorteio_principal.length; x++) {
@@ -55,8 +57,7 @@ function conferir() {
                 push.classList.add("errou");
             }
         }
-
-        var box = document.getElementById('sorteio')
+        let color = $('.toast-header').css('background-color', '#45B649');
         var num_acertos = [
             document.getElementById('tb_15'),
             document.getElementById('tb_14'),
@@ -67,28 +68,39 @@ function conferir() {
 
 
         if (acertos == 11) {
-            num_acertos[4].style.background = "green";
-
             toast();
             $('.toast-body').html(`${acertos} acertos, Ganhou R$4,00!`);
-            $('.toast-header').css('background-color', '#45B649')
-            $('#parabens').html('Parabéns!!!')
+            num_acertos[4].style.background = "green";
+            color
 
         } else if (acertos == 12) {
-            //alert(`${acertos} acertos, ganhei R$8,00!`);
+            toast();
+            $('.toast-body').html(`${acertos} acertos, ganhei R$8,00!`);
             num_acertos[3].style.background = "green";
+            color
+
         } else if (acertos == 13) {
-            //alert(`${acertos} acertos, ganhei R$20,00!`);
+            toast();
+            $('.toast-body').html(`${acertos} acertos, ganhei R$20,00!`);
             num_acertos[2].style.background = "green";
+            color
+
         } else if (acertos == 14) {
-            //alert(`${acertos} acertos, ganhei + de R$1000,00!`);
+            toast();
+            $('.toast-body').html(`${acertos} acertos, ganhei + de R$1000,00!`);
             num_acertos[1].style.background = "green";
+            color
+
         } else if (acertos == 15) {
-            //alert(`${acertos} acertos, estou milionário!!!`);
+            toast();
+            $('.toast-body').html(`${acertos} acertos, estou milionário!!!`);
             num_acertos[0].style.background = "green";
+            color
+
         } else {
-            alert(`${acertos} não ganhei nada :/`);
-            box.style.backgroundColor = '#dc3545'
+            toast();
+            $('.toast-body').html(`${acertos} acertos | Boa sorte na próxima vez!`);
+            $('.toast-header').css('background-color', '#DCE35B');
         }
 
 
@@ -97,26 +109,35 @@ function conferir() {
 
 /*-------- Limpa os campos input e as esferas ao lado da tabela -------*/
 function limpar() {
+    let retorno = Campos_vazios();
+    vazios = retorno.length;
 
-    for (x = 0; x < 15; x++) {
+    if (vazios < 15) {
+        vazios = (15 - vazios);
+    }
+
+    // Limpa campos
+    for (x = 0; x < vazios; x++) {
         var campo = document.getElementById('txt_' + x);
         campo.value = ""
-        campo.classList.remove("borda")
+
         var bola = document.getElementById("grid-item_" + x);
         bola.classList.remove("errou");
         bola.innerHTML = "X";
-
-        if (x >= 11 && x <= 15) {
-            document.getElementById('tb_' + x).style.backgroundColor = "initial";
-        }
     }
+
+    // Limpa tabela
+    for (let j = 11; j <= 15; j++) {
+        document.getElementById('tb_' + j).style.backgroundColor = "initial";
+    }
+
     array2 = [];
     document.getElementById('txt_0').focus();
 
 }
 
 
-/*------- Função para validar os campos vazios --------*/
+/*------- Função para validar os campos ss --------*/
 
 function Campos_vazios() {
     vazio = []
