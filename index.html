@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="estilo.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <title>Loteria</title>
 </head>
 
@@ -29,6 +31,15 @@
             </div>
         </header>
         <section>
+
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+                <div class="toast-header">
+                    <strong id="parabens" class="mr-auto"><i class="fas fa-exclamation-triangle"></i> Atenção</strong>
+                </div>
+                <div class="toast-body">
+                    Hello, world! This is a toast message.
+                </div>
+            </div>
 
             <div class="box_wrapper">
 
@@ -156,14 +167,14 @@
                 </div>
             </div>
 
-
-
         </section>
-        <!-- <footer>
-        <p>Melqui Santos &copy; todos os direitos reservados.</p>
-    </footer> !-->
-
+        <div class="row">
+            <div class="footer col-md-12">
+                <p>Melqui Santos &copy; todos os direitos reservados.</p>
+            </div>
+        </div>
     </div>
+
     <script src="script.js"></script>
 
 </body>

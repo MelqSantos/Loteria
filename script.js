@@ -1,11 +1,10 @@
-// Função para mostrar os números sorteados no topo
+/*--------- Função para montar os números sorteados ---------*/
 $(document).ready(function() {
 
     var concurso = $("#concurso");
     var boxSorteio = document.querySelector("div .grid-container");
 
-
-    // Números sorteados na lotofácil, alterar aqui!!
+    /*----- Números sorteados na lotofácil, alterar aqui!! --------*/
     sorteio_principal = [1, 2, 4, 5, 6, 10, 11, 12, 13, 14, 18, 20, 21, 23, 24];
 
     // Monta as esferas sorteadas no "menu".
@@ -25,7 +24,7 @@ $(document).ready(function() {
 
 });
 
-// Função para conferir os números digitados com o array do sorteio
+/*--------- Função para conferir os números digitados com o array do sorteio --------*/
 function conferir() {
 
     var array2 = [];
@@ -36,9 +35,11 @@ function conferir() {
     let cRepetidos = Numeros_Repetidos();
 
     if (cVazios.length > 0 && cVazios.length <= 15) {
-        alert("Atenção! Preencha todos os campos!")
-    } else if (cRepetidos.length > 0) {
-        alert("Atenção! Números repetidos")
+        toast();
+        $('.toast-body').html('Preencha os campos vazios para prosseguir! ');
+    } else if (cRepetidos > 0) {
+        toast();
+        $('.toast-body').html('Números repetidos! ');
     } else {
         // Preenche o array 2 de acordo com os campos no form
         for (x = 0; x < sorteio_principal.length; x++) {
@@ -66,8 +67,13 @@ function conferir() {
 
 
         if (acertos == 11) {
-            //alert(`${acertos} acertos, ganhei R$4,00!`);
             num_acertos[4].style.background = "green";
+
+            toast();
+            $('.toast-body').html(`${acertos} acertos, Ganhou R$4,00!`);
+            $('.toast-header').css('background-color', '#45B649')
+            $('#parabens').html('Parabéns!!!')
+
         } else if (acertos == 12) {
             //alert(`${acertos} acertos, ganhei R$8,00!`);
             num_acertos[3].style.background = "green";
@@ -89,7 +95,7 @@ function conferir() {
     }
 }
 
-// Limpa os campos input e as esferas ao lado da tabela
+/*-------- Limpa os campos input e as esferas ao lado da tabela -------*/
 function limpar() {
 
     for (x = 0; x < 15; x++) {
@@ -109,25 +115,9 @@ function limpar() {
 
 }
 
-// Função para criar as esferas de sorteio 
-function sorteio() {
 
-    var boxSorteio = document.querySelector("div .grid-container");
+/*------- Função para validar os campos vazios --------*/
 
-    for (let x = 0; x < sorteio_principal.length; x++) {
-
-        var bola = document.createElement('div');
-        boxSorteio.appendChild(bola);
-        bola.className = "grid-item";
-        bola.id = "grid-item_" + x;
-        bola.innerHTML = "X";
-
-    }
-
-}
-
-
-// Função para validar os campos vazios
 function Campos_vazios() {
     vazio = []
 
@@ -141,14 +131,30 @@ function Campos_vazios() {
     return vazio
 }
 
+/*------- Validação para validar números repetidos -------*/
+
 function Numeros_Repetidos() {
     let vazio = [];
     let repetido = 0;
 
+    // Laço para adicionar valor dos campos em um array vazio
     for (let x = 0; x < sorteio_principal.length; x++) {
         resultado = Number(document.getElementById('txt_' + x).value);
         vazio.push(resultado);
     }
 
+    // Laço para verificar se há números repetidos no array acima
+    for (let l = 0; l < vazio.length; l++) {
+        for (let j = l + 1; j < vazio.length; j++) {
+
+            if (vazio[l] == vazio[j]) {
+                repetido += 1
+            }
+        }
+    }
     return repetido
+}
+
+function toast() {
+    $('.toast').toast('show');
 }
