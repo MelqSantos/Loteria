@@ -4,6 +4,14 @@ body {
     font-family: Roboto;
 }
 
+#bg {
+    background-image: url(img/bg.jpg);
+    background-size: cover;
+}
+
+
+/*----------- Header -----------*/
+
 .banner {
     padding-top: 15px;
 }
@@ -11,31 +19,6 @@ body {
 h4 {
     text-align: center;
     color: #ffff;
-    text-shadow: 1px 1px #0000;
-}
-
-
-/* Ajustar números no título*/
-
-#concurso {
-    display: flex;
-    justify-content: center;
-}
-
-#titulo {
-    font-family: Roboto;
-    margin: 15px;
-    font-weight: 800;
-    text-shadow: 1px 1px black;
-}
-
-#bg {
-    background-image: url(img/bg.jpg);
-    background-size: cover;
-}
-
-label {
-    padding-top: 10px !important;
 }
 
 .wrapper_titulo {
@@ -50,19 +33,98 @@ label {
     font-style: italic;
 }
 
-.footer {
-    background-color: #000000;
-    opacity: 0.5;
-    text-align: center;
-    padding-top: 10px;
-    width: 100%;
-    height: 3rem;
-    font-style: italic;
-    color: aliceblue;
+#titulo {
+    font-family: Roboto;
+    margin: 15px;
+    font-weight: 800;
+    text-shadow: 1px 1px black;
 }
+
+
+/* sorteio principal (Header) */
+
+#concurso span {
+    width: 25px;
+    height: 25px;
+    border: solid 1px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 1px 1px #000000;
+    color: #000000;
+    font-weight: bold;
+    font-size: 10pt;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1px;
+    transform: scale(1.1);
+    margin: 2px
+}
+
+#concurso span:hover {
+    transform: scale(1.2);
+}
+
+#concurso {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#dice {
+    animation: rotate 2s linear infinite;
+}
+
+
+/* Toast */
+
+.toast-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toast {
+    position: fixed;
+    text-align: center;
+    margin-left: 2vw;
+    font-weight: bold;
+    font-size: 1rem;
+    backdrop-filter: blur(100px);
+}
+
+.toast-header {
+    background-color: #DCE35B;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toast-body {
+    padding: 0.9rem;
+}
+
+
+/*----------- Section -----------*/
 
 section {
     padding: 15px;
+}
+
+
+/* Quadro principal (inputs) */
+
+label {
+    padding-top: 10px !important;
 }
 
 .box {
@@ -73,11 +135,24 @@ section {
     color: white;
 }
 
-#info {
-    padding: 25px 5px 0 5px !important;
-    margin: 25px auto;
-    text-align: center !important;
+#btn {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
+
+#btn button {
+    width: 100%;
+    font-weight: 900;
+}
+
+i:hover {
+    transition: all 1s ease-in-out;
+    transform: rotate(360deg);
+}
+
+
+/* Box grid com esferas */
 
 .grid-container {
     border-radius: 25px;
@@ -125,29 +200,13 @@ section {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#btn {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
 
-#btn button {
-    width: 100%;
-    font-weight: 900;
-}
+/* Box com tabela de prêmios */
 
-#resultado {
-    background-color: #198754;
-    border-radius: 15px;
-    height: 50px;
-    margin: 15px auto;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font: 20pt bold;
-    color: whitesmoke;
-    font-family: Roboto;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+#info {
+    padding: 15px 5px 0 5px !important;
+    margin: 25px auto;
+    text-align: center !important;
 }
 
 table {
@@ -157,78 +216,25 @@ table {
     border-radius: 15px 15px 0 0;
 }
 
-span {
-    width: 25px;
-    height: 25px;
-    border: solid 1px;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: black;
-    font-weight: bold;
-    font-size: 10pt;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1px;
-}
-
-i:hover {
-    transition: all 1s ease-in-out;
-    transform: rotate(360deg);
-}
-
-.borda {
-    border: solid 2px red !important
-}
-
-
-/* Toast */
-
-.toast-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.toast {
-    position: fixed;
-    text-align: center;
-    margin-left: 2vw;
-    font-weight: bold;
-    font-size: 1rem;
-    backdrop-filter: blur(100px);
-}
-
-.toast-header {
-    background-color: #DCE35B;
-    color: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.toast-body {
-    padding: 0.9rem;
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-#dice {
-    animation: rotate 2s linear infinite;
-}
-
 .premio {
-    background: #00bf8f;
+    background: #3CA55C;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #001510, #00bf8f);
+    background: -webkit-linear-gradient(to left, #B5AC49, #3CA55C);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #001510, #00bf8f);
+    background: linear-gradient(to left, #B5AC49, #3CA55C);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/*----------- Footer -----------*/
+
+.footer {
+    background-color: #000000;
+    opacity: 0.5;
+    text-align: center;
+    padding-top: 10px;
+    width: 100%;
+    height: 3rem;
+    font-style: italic;
+    color: aliceblue;
 }

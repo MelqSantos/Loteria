@@ -131,7 +131,7 @@ function limpar() {
 
     // Limpa tabela
     for (let j = 11; j <= 15; j++) {
-        document.getElementById('tb_' + j).style.background("initial");
+        document.getElementById('tb_' + j).classList.remove("premio")
     }
 
     array2 = [];
