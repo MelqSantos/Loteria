@@ -132,7 +132,8 @@ section {
 }
 
 #btn button {
-    width: 100%
+    width: 100%;
+    font-weight: 900;
 }
 
 #resultado {
@@ -152,8 +153,8 @@ section {
 table {
     color: white !important;
     font-size: larger;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 15px 0 15px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px 15px 0 0;
 }
 
 span {
@@ -174,7 +175,6 @@ span {
 i:hover {
     transition: all 1s ease-in-out;
     transform: rotate(360deg);
-    cursor: pointer;
 }
 
 .borda {
@@ -209,4 +209,26 @@ i:hover {
 
 .toast-body {
     padding: 0.9rem;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#dice {
+    animation: rotate 2s linear infinite;
+}
+
+.premio {
+    background: #00bf8f;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #001510, #00bf8f);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #001510, #00bf8f);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

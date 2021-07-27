@@ -43,6 +43,7 @@ function conferir() {
         $('.toast-body').html('Números repetidos! ');
         $('.toast-header').css('background-color', '#DCE35B');
     } else {
+
         // Preenche o array 2 de acordo com os campos no form
         for (x = 0; x < sorteio_principal.length; x++) {
 
@@ -57,6 +58,7 @@ function conferir() {
                 push.classList.add("errou");
             }
         }
+
         let color = $('.toast-header').css('background-color', '#45B649');
         var num_acertos = [
             document.getElementById('tb_15'),
@@ -67,34 +69,35 @@ function conferir() {
         ]
 
 
+        let premio = ` Parabéns! Você acertou ${acertos} números!`
         if (acertos == 11) {
             toast();
-            $('.toast-body').html(`${acertos} acertos, Ganhou R$4,00!`);
-            num_acertos[4].style.background = "green";
+            $('.toast-body').html(premio);
+            num_acertos[4].classList.add("premio");
             color
 
         } else if (acertos == 12) {
             toast();
-            $('.toast-body').html(`${acertos} acertos, ganhei R$8,00!`);
-            num_acertos[3].style.background = "green";
+            $('.toast-body').html(premio);
+            num_acertos[3].classList.add("premio");
             color
 
         } else if (acertos == 13) {
             toast();
-            $('.toast-body').html(`${acertos} acertos, ganhei R$20,00!`);
-            num_acertos[2].style.background = "green";
+            $('.toast-body').html(premio);
+            num_acertos[2].classList.add("premio");
             color
 
         } else if (acertos == 14) {
             toast();
-            $('.toast-body').html(`${acertos} acertos, ganhei + de R$1000,00!`);
-            num_acertos[1].style.background = "green";
+            $('.toast-body').html(premio);
+            num_acertos[1].classList.add("premio");
             color
 
         } else if (acertos == 15) {
             toast();
-            $('.toast-body').html(`${acertos} acertos, estou milionário!!!`);
-            num_acertos[0].style.background = "green";
+            $('.toast-body').html("Parabéns! Você está milionário!!!");
+            num_acertos[0].classList.add("premio");
             color
 
         } else {
@@ -128,7 +131,7 @@ function limpar() {
 
     // Limpa tabela
     for (let j = 11; j <= 15; j++) {
-        document.getElementById('tb_' + j).style.backgroundColor = "initial";
+        document.getElementById('tb_' + j).style.background("initial");
     }
 
     array2 = [];
